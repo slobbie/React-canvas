@@ -113,9 +113,17 @@ const Canvas = ({ width, height }: CanvasProps) => {
       canvas.removeEventListener('mouseleave', exitPaint);
     };
   }, [startPaint, piant, exitPaint]);
-
+  const clearCanvas = () => {
+    if (!canvasRef.current) {
+      return;
+    }
+    const canvas: HTMLCanvasElement = canvasRef.current;
+    //clearRect() 특정 부분을 지우는 직사각형이며, 이 지워진 부분은 완전히 투명해집니다.
+    canvas.getContext('2d')!!.clearRect(0, 0, canvas.width, canvas.height);
+  };
   return (
     <Section>
+      <DeleteBtn onClick={clearCanvas}>지우기</DeleteBtn>
       <CanvasBox ref={canvasRef} height={height} width={width} />
     </Section>
   );
@@ -134,3 +142,5 @@ const CanvasBox = styled.canvas`
   border-radius: 15px;
   background: lightgrey;
 `;
+
+const DeleteBtn = styled.button``;
