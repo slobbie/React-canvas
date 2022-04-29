@@ -1,4 +1,4 @@
-import { useCallback, useEffect, useRef, useState } from 'react';
+import React, { useCallback, useEffect, useRef, useState } from 'react';
 import styled from 'styled-components';
 
 interface CanvasProps {
@@ -11,6 +11,7 @@ interface Coordinate {
   y: number;
 }
 const Canvas = ({ width, height }: CanvasProps) => {
+  // const [range, setRange] = useState(5);
   const canvasRef = useRef<HTMLCanvasElement>(null);
   // 마우스 이벤트 상태
   const [mousesPosition, setMousePosition] = useState<Coordinate | undefined>(
@@ -43,7 +44,7 @@ const Canvas = ({ width, height }: CanvasProps) => {
     if (context) {
       context.strokeStyle = 'tomato'; // 선 색상
       context.lineJoin = 'round'; // 끝선의 모양
-      context.lineWidth = 5; // 선의 굵기
+      context.lineWidth = value; // 선의 굵기
 
       context.beginPath(); // 새로운 경로를 만듭니다. 경로가 생성됬다면, 이후 그리기 명령들은 경로를 구성하고 만드는데 사용하게 됩니다.
       //펜(pen) 이동하기
@@ -167,10 +168,28 @@ const Canvas = ({ width, height }: CanvasProps) => {
     //clearRect() 특정 부분을 지우는 직사각형이며, 이 지워진 부분은 완전히 투명해집니다.
     canvas.getContext('2d')!!.clearRect(0, 0, canvas.width, canvas.height);
   };
+
+  const range = [
+    {
+      value: 5,
+    },
+  ];
+  const [value, setValue] = useState<number>(range[0].value);
+  const SliderOnChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    setValue(Number(e.target.value));
+  };
+  console.log(value);
   return (
     <Section>
-      <DeleteBtn onClick={clearCanvas}>지우기</DeleteBtn>
       <CanvasBox ref={canvasRef} height={height} width={width} />
+      <RangeInput
+        value={value}
+        min={5}
+        max={30}
+        onChange={SliderOnChange}
+        type='range'
+      />
+      <DeleteBtn onClick={clearCanvas}>지우기</DeleteBtn>
     </Section>
   );
 };
@@ -182,11 +201,22 @@ Canvas.defaultProps = {
   height: 600,
 };
 
-const Section = styled.section``;
+const Section = styled.section`
+  display: flex;
+  flex-direction: column;
+`;
 
 const CanvasBox = styled.canvas`
   border-radius: 15px;
-  background: lightgrey;
+  background: #fff;
 `;
 
-const DeleteBtn = styled.button``;
+const DeleteBtn = styled.button`
+  width: 30%;
+  border-radius: 10px;
+  border: none;
+`;
+
+const RangeInput = styled.input`
+  width: 30%;
+`;

@@ -3,7 +3,6 @@ import Canvas from '../components/Canvas';
 const Home = () => {
   return (
     <Section>
-      <h2>Home</h2>
       <Canvas />
     </Section>
   );
