@@ -92,6 +92,45 @@ const Canvas = ({ width, height }: CanvasProps) => {
     setIsPainting(false);
   }, []);
 
+  // 핸드폰 터치에도 반응하게 하는 함수
+
+  const startTouch = useCallback((e: TouchEvent) => {
+    e.preventDefault();
+    if (!canvasRef.current) return;
+    const canvas: HTMLCanvasElement = canvasRef.current;
+    let touch = e.touches[0];
+    let mouseEvent = new MouseEvent('mousedown', {
+      clientX: touch.clientX,
+      clientY: touch.clientY,
+    });
+    canvas.dispatchEvent(mouseEvent);
+  }, []);
+
+  const touch = useCallback((event: TouchEvent) => {
+    event.preventDefault();
+    if (!canvasRef.current) {
+      return;
+    }
+    const canvas: HTMLCanvasElement = canvasRef.current;
+    var touch = event.touches[0];
+    var mouseEvent = new MouseEvent('mousemove', {
+      clientX: touch.clientX,
+      clientY: touch.clientY,
+    });
+    canvas.dispatchEvent(mouseEvent);
+  }, []);
+
+  const exitTouch = useCallback((event: TouchEvent) => {
+    event.preventDefault();
+
+    if (!canvasRef.current) {
+      return;
+    }
+    const canvas: HTMLCanvasElement = canvasRef.current;
+    var mouseEvent = new MouseEvent('mouseup', {});
+    canvas.dispatchEvent(mouseEvent);
+  }, []);
+
   useEffect(() => {
     if (!canvasRef.current) {
       return;
@@ -106,11 +145,18 @@ const Canvas = ({ width, height }: CanvasProps) => {
     canvas.addEventListener('mouseup', exitPaint);
     canvas.addEventListener('mouseleave', exitPaint);
 
+    canvas.addEventListener('touchstart', startTouch);
+    canvas.addEventListener('touchmove', touch);
+    canvas.addEventListener('touchend', exitTouch);
     return () => {
       canvas.removeEventListener('mousedown', startPaint);
       canvas.removeEventListener('mousemove', piant);
       canvas.removeEventListener('mouseup', exitPaint);
       canvas.removeEventListener('mouseleave', exitPaint);
+
+      canvas.removeEventListener('touchstart', startTouch);
+      canvas.removeEventListener('touchmove', touch);
+      canvas.removeEventListener('touchend', exitTouch);
     };
   }, [startPaint, piant, exitPaint]);
   const clearCanvas = () => {
