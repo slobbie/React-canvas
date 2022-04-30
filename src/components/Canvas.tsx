@@ -1,5 +1,6 @@
 import React, { useCallback, useEffect, useRef, useState } from 'react';
 import styled from 'styled-components';
+import Button from './button';
 
 interface CanvasProps {
   width: number;
@@ -11,7 +12,6 @@ interface Coordinate {
   y: number;
 }
 const Canvas = ({ width, height }: CanvasProps) => {
-  // const [range, setRange] = useState(5);
   const canvasRef = useRef<HTMLCanvasElement>(null);
   // 마우스 이벤트 상태
   const [mousesPosition, setMousePosition] = useState<Coordinate | undefined>(
@@ -19,11 +19,22 @@ const Canvas = ({ width, height }: CanvasProps) => {
   );
   const [isPainting, setIsPainting] = useState<Boolean>(false);
 
+  // 펜 색상 변겅을 위한 dom
+  const BtnColor = document.getElementsByClassName('CanvasColor');
+  const handleColorClick = (e: any) => {
+    if (!canvasRef.current) return;
+    const canvas: HTMLCanvasElement = canvasRef.current;
+    const context = canvas.getContext('2d');
+    const color = e.target.style.backgroundColor;
+    if (context) {
+      context.strokeStyle = color;
+    }
+  };
+
   // 마우스 이벤트로 좌표를 얻는 함수
   const getCoordinates = (e: MouseEvent) => {
-    if (!canvasRef.current) {
-      return;
-    }
+    if (!canvasRef.current) return;
+
     const canvas: HTMLCanvasElement = canvasRef.current;
     return {
       x: e.pageX - canvas.offsetLeft,
@@ -36,13 +47,14 @@ const Canvas = ({ width, height }: CanvasProps) => {
     originMousePosition: Coordinate,
     newMousePosition: Coordinate
   ) => {
-    if (!canvasRef.current) {
-      return;
-    }
+    if (!canvasRef.current) return;
+
     const canvas: HTMLCanvasElement = canvasRef.current;
     const context = canvas.getContext('2d');
+    // const color = colors.current.value;
+    // console.log(color);
     if (context) {
-      context.strokeStyle = 'tomato'; // 선 색상
+      // context.strokeStyle = color; // 선 색상
       context.lineJoin = 'round'; // 끝선의 모양
       context.lineWidth = value; // 선의 굵기
 
@@ -133,9 +145,8 @@ const Canvas = ({ width, height }: CanvasProps) => {
   }, []);
 
   useEffect(() => {
-    if (!canvasRef.current) {
-      return;
-    }
+    if (!canvasRef.current) return;
+
     const canvas: HTMLCanvasElement = canvasRef.current;
     // addEventListener()는
     // document의 특정요소(Id,class,tag 등등..)
@@ -149,6 +160,12 @@ const Canvas = ({ width, height }: CanvasProps) => {
     canvas.addEventListener('touchstart', startTouch);
     canvas.addEventListener('touchmove', touch);
     canvas.addEventListener('touchend', exitTouch);
+
+    // 컬러변경 스타일 이벤트
+    Array.from(BtnColor).forEach((color) =>
+      color.addEventListener('click', handleColorClick)
+    );
+
     return () => {
       canvas.removeEventListener('mousedown', startPaint);
       canvas.removeEventListener('mousemove', piant);
@@ -161,14 +178,14 @@ const Canvas = ({ width, height }: CanvasProps) => {
     };
   }, [startPaint, piant, exitPaint]);
   const clearCanvas = () => {
-    if (!canvasRef.current) {
-      return;
-    }
+    if (!canvasRef.current) return;
+
     const canvas: HTMLCanvasElement = canvasRef.current;
     //clearRect() 특정 부분을 지우는 직사각형이며, 이 지워진 부분은 완전히 투명해집니다.
     canvas.getContext('2d')!!.clearRect(0, 0, canvas.width, canvas.height);
   };
 
+  // slideBar 제어 부분
   const range = [
     {
       value: 5,
@@ -178,23 +195,42 @@ const Canvas = ({ width, height }: CanvasProps) => {
   const SliderOnChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     setValue(Number(e.target.value));
   };
-  console.log(value);
+
+  const ButtonData = [
+    { id: 1, color: 'black' },
+    { id: 2, color: 'white' },
+    { id: 3, color: 'red' },
+    { id: 4, color: 'tomato' },
+    { id: 5, color: 'yellow' },
+    { id: 6, color: 'green' },
+    { id: 7, color: 'blue' },
+    { id: 8, color: 'navy' },
+    { id: 9, color: 'Purple' },
+  ];
+
   return (
     <Section>
       <CanvasBox ref={canvasRef} height={height} width={width} />
-      <RangeInput
-        value={value}
-        min={5}
-        max={30}
-        onChange={SliderOnChange}
-        type='range'
-      />
-      <DeleteBtn onClick={clearCanvas}>지우기</DeleteBtn>
+      <ControlBar>
+        <RangeInput
+          value={value}
+          min={5}
+          max={30}
+          onChange={SliderOnChange}
+          type='range'
+        />
+        <BtnBox>
+          {ButtonData.map((btn) => {
+            return <Button key={btn.id} color={btn.color} />;
+          })}
+        </BtnBox>
+        <DeleteBtn onClick={clearCanvas}>지우기</DeleteBtn>
+      </ControlBar>
     </Section>
   );
 };
 
-export default Canvas;
+export default React.memo(Canvas);
 
 Canvas.defaultProps = {
   width: 800,
@@ -211,12 +247,25 @@ const CanvasBox = styled.canvas`
   background: #fff;
 `;
 
+const ControlBar = styled.div`
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+`;
 const DeleteBtn = styled.button`
   width: 30%;
   border-radius: 10px;
   border: none;
+  margin: 10px;
 `;
 
 const RangeInput = styled.input`
   width: 30%;
+  margin: 10px;
+`;
+
+const BtnBox = styled.div`
+  display: flex;
 `;

@@ -34,7 +34,7 @@ a{
 `;
 
 const Section = styled.section`
-  background-color: tomato;
+  background-color: #badc58;
   display: flex;
   align-items: center;
   justify-content: center;
