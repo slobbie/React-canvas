@@ -1,12 +1,19 @@
 import React from 'react';
-import Home from './page/Home';
+import Paintbrush from './page/paintbrush';
 import styled, { createGlobalStyle } from 'styled-components';
+import Nav from './layout/Nav';
+import { Route, Routes } from 'react-router-dom';
+import Home from './page/home';
 
 function App() {
   return (
     <Section>
       <GlobalStyle />
-      <Home />
+      <Nav />
+      <Routes>
+        <Route path='/' element={<Home />} />
+        <Route path='/brush' element={<Paintbrush />} />
+      </Routes>
     </Section>
   );
 }
@@ -34,10 +41,12 @@ a{
 `;
 
 const Section = styled.section`
-  background-color: #badc58;
+  background-color: #1e90ff;
   display: flex;
+  flex-direction: column;
+
   align-items: center;
-  justify-content: center;
+  justify-content: flex-start;
   width: 100%;
   height: 100vh;
 `;

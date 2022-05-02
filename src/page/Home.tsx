@@ -1,13 +1,8 @@
-import styled from 'styled-components';
-import Canvas from '../components/Canvas';
 const Home = () => {
   return (
-    <Section>
-      <Canvas />
-    </Section>
+    <div>
+      <h2>home</h2>
+    </div>
   );
 };
-
 export default Home;
-
-const Section = styled.section``;
