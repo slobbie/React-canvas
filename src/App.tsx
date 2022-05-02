@@ -4,6 +4,7 @@ import styled, { createGlobalStyle } from 'styled-components';
 import Nav from './layout/Nav';
 import { Route, Routes } from 'react-router-dom';
 import Home from './page/home';
+import LightWave from './page/lightWave';
 
 function App() {
   return (
@@ -13,6 +14,7 @@ function App() {
       <Routes>
         <Route path='/' element={<Home />} />
         <Route path='/brush' element={<Paintbrush />} />
+        <Route path='/light' element={<LightWave />} />
       </Routes>
     </Section>
   );

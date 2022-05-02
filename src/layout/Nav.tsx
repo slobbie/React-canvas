@@ -7,6 +7,9 @@ const Nav = () => {
         <Link to='/'>Home</Link>
       </Logo>
       <Ul>
+        <Link to='/light'>
+          <Li>lightWave</Li>
+        </Link>
         <Link to='/brush'>
           <Li>Paintbrush</Li>
         </Link>
@@ -24,7 +27,9 @@ const Navbar = styled.nav`
   align-items: center;
 `;
 
-const Ul = styled.ul``;
+const Ul = styled.ul`
+  display: flex;
+`;
 const Li = styled.ul``;
 
 const Logo = styled.h1``;
