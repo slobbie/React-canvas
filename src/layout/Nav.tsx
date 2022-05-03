@@ -7,6 +7,9 @@ const Nav = () => {
         <Link to='/'>Home</Link>
       </Logo>
       <Ul>
+        <Link to='/wave'>
+          <Li>Wave</Li>
+        </Link>
         <Link to='/light'>
           <Li>lightWave</Li>
         </Link>
@@ -22,9 +25,9 @@ export default Nav;
 const Navbar = styled.nav`
   width: 100%;
   height: 40px;
-  border: 1px solid black;
   display: flex;
   align-items: center;
+  background-color: #fff;
 `;
 
 const Ul = styled.ul`

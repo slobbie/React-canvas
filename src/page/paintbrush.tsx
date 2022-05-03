@@ -12,5 +12,8 @@ export default Paintbrush;
 
 const Section = styled.section`
   background-color: #badc58;
-  border-radius: 15px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 `;

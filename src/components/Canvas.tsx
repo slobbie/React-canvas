@@ -240,6 +240,8 @@ Canvas.defaultProps = {
 const Section = styled.section`
   display: flex;
   flex-direction: column;
+  width: 800px;
+  height: 100vh;
 `;
 
 const CanvasBox = styled.canvas`

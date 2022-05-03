@@ -5,6 +5,7 @@ import Nav from './layout/Nav';
 import { Route, Routes } from 'react-router-dom';
 import Home from './page/home';
 import LightWave from './page/lightWave';
+import Wave from './page/wave';
 
 function App() {
   return (
@@ -13,6 +14,7 @@ function App() {
       <Nav />
       <Routes>
         <Route path='/' element={<Home />} />
+        <Route path='/wave' element={<Wave />} />
         <Route path='/brush' element={<Paintbrush />} />
         <Route path='/light' element={<LightWave />} />
       </Routes>
