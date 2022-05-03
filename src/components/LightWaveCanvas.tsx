@@ -1,4 +1,4 @@
-import { RefObject, useEffect, useRef } from 'react';
+import { RefObject } from 'react';
 import styled from 'styled-components';
 import useCanvas from '../hooks/useCanvas';
 import { ILightSource, LightSource } from './lightSource';
@@ -11,7 +11,7 @@ type CanavsProps = {
 
 const LightWaveCanvas = ({ canvasWidth, canvasHeight }: CanavsProps) => {
   const fillBackground = (ctx: CanvasRenderingContext2D) => {
-    ctx.fillStyle = 'reb(31, 31, 36)';
+    ctx.fillStyle = 'rgb(31, 31, 36)';
     ctx.fillRect(0, 0, canvasWidth, canvasHeight);
   };
 

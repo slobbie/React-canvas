@@ -5,7 +5,7 @@ export interface ILightSource {
   drawLightLines: (
     ctx: CanvasRenderingContext2D,
     pointCenterX: number,
-    pointCeterY: number
+    pointCenterY: number
   ) => void;
 }
 
@@ -44,7 +44,7 @@ export class LightSource implements ILightSource {
 
   drawLightSource(ctx: CanvasRenderingContext2D) {
     ctx.beginPath();
-    ctx.fillStyle = 'rgb(102,103,171)';
+    ctx.fillStyle = 'rgb(102, 103, 171)';
     ctx.arc(this.centerX, this.centerY, this.radius, 0, PI2);
     ctx.fill();
   }
@@ -52,12 +52,12 @@ export class LightSource implements ILightSource {
   drawLightLines(
     ctx: CanvasRenderingContext2D,
     pointCenterX: number,
-    pointCeterY: number
+    pointCenterY: number
   ) {
     ctx.strokeStyle = 'rgb(176, 176, 212, 0.24)';
     ctx.lineWidth = 1;
     ctx.moveTo(this.centerX, this.centerY - this.radius);
-    ctx.lineTo(pointCenterX, pointCeterY);
+    ctx.lineTo(pointCenterX, pointCenterY);
     ctx.stroke();
   }
 }

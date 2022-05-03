@@ -26,9 +26,11 @@ const useCanvas = (
       }
     };
     setCanvas();
+
     let requestId: number;
     const requestAnimation = () => {
       requestId = window.requestAnimationFrame(requestAnimation);
+
       if (ctx) {
         animate(ctx);
       }
@@ -38,7 +40,8 @@ const useCanvas = (
     return () => {
       window.cancelAnimationFrame(requestId);
     };
-  }, [canvasWidth, canvasHeight]);
+  }, [canvasWidth, canvasHeight, animate]);
+
   return canvasRef;
 };
 export default useCanvas;

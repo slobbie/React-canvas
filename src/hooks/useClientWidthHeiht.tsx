@@ -1,6 +1,6 @@
 import { RefObject, useEffect, useState } from 'react';
 
-const useClientWidthHeiht = (ref: RefObject<HTMLElement>) => {
+export const useClientWidthHeiht = (ref: RefObject<HTMLElement>) => {
   const [width, setWidth] = useState<number>(0);
   const [height, setHeight] = useState<number>(0);
 
@@ -12,13 +12,14 @@ const useClientWidthHeiht = (ref: RefObject<HTMLElement>) => {
       }
     };
     setClientWidthHeight();
-    window.addEventListener('resiz', setClientWidthHeight);
+
+    window.addEventListener('resize', setClientWidthHeight);
+
     return () => {
       window.removeEventListener('resize', setClientWidthHeight);
     };
   }, []);
   const clientReact = { width, height };
+
   return clientReact;
 };
-
-export default useClientWidthHeiht;
