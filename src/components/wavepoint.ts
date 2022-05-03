@@ -1,20 +1,22 @@
 export interface IWavePoint {
   x: number;
   y: number;
+  index: number;
 }
 export class Wavepoint implements IWavePoint {
   x: number;
   y: number;
+  index!: number;
   private fixedY: number;
   private speed: number;
   private cur: number;
   private max: number;
-  constructor(x: number, y: number) {
+  constructor(index: number, x: number, y: number) {
     this.x = x;
     this.y = y;
     this.fixedY = y;
     this.speed = 0.1;
-    this.cur = 0;
+    this.cur = index;
     this.max = Math.random() * 100 + 150;
   }
 

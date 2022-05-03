@@ -11,7 +11,7 @@ const Nav = () => {
           <Li>Wave</Li>
         </Link>
         <Link to='/light'>
-          <Li>lightWave</Li>
+          <Li>light</Li>
         </Link>
         <Link to='/brush'>
           <Li>Paintbrush</Li>

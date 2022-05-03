@@ -1,6 +1,6 @@
 import { RefObject, useEffect, useRef } from 'react';
 import styled from 'styled-components';
-import { IWaveDataModel, WaveAni } from './WaveAni';
+import { WaveGroup, WaveGroupDataModel } from './WaveGroup';
 
 type CanavsProps = {
   canvasWidth: number;
@@ -11,10 +11,13 @@ const WaveCanvas = ({ canvasWidth, canvasHeight }: CanavsProps) => {
   const canvasRef: RefObject<HTMLCanvasElement> =
     useRef<HTMLCanvasElement>(null);
 
-  const wave: IWaveDataModel = new WaveAni(canvasWidth, canvasHeight);
+  const waveGroup: WaveGroupDataModel = new WaveGroup(
+    canvasWidth,
+    canvasHeight
+  );
   const animate = (ctx: CanvasRenderingContext2D) => {
     ctx.clearRect(0, 0, canvasWidth, canvasHeight);
-    wave.draw(ctx);
+    waveGroup.draw(ctx);
   };
   useEffect(() => {
     const canavs = canvasRef.current;
@@ -31,7 +34,7 @@ const WaveCanvas = ({ canvasWidth, canvasHeight }: CanavsProps) => {
         canavs.height = canvasHeight * devicePixelRatio;
 
         ctx.scale(devicePixelRatio, devicePixelRatio);
-        wave.resize(canvasWidth, canvasHeight);
+        waveGroup.resize(canvasWidth, canvasHeight);
       }
     };
     setCanvas();
