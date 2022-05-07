@@ -1,6 +1,6 @@
 import React, { useCallback, useEffect, useRef, useState } from 'react';
 import styled from 'styled-components';
-import Button from './button';
+import Button from '../button';
 
 interface CanvasProps {
   width: number;

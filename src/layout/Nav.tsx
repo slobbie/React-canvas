@@ -7,6 +7,9 @@ const Nav = () => {
         <Link to='/'>Home</Link>
       </Logo>
       <Ul>
+        <Link to='/typo'>
+          <Li>Typo</Li>
+        </Link>
         <Link to='/wave'>
           <Li>Wave</Li>
         </Link>

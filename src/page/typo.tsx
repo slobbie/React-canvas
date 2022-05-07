@@ -1,9 +1,9 @@
 import React, { RefObject, useRef } from 'react';
 import styled from 'styled-components';
-import WaveCanvas from '../components/wave/waveCanvas';
+import TypoCanvas from '../components/typo/typoCanvas';
 import { useClientWidthHeiht } from '../hooks/useClientWidthHeiht';
 
-const Wave = () => {
+const Typo = () => {
   const mainRef: RefObject<HTMLElement> = useRef<HTMLElement>(null);
 
   const clientReact = useClientWidthHeiht(mainRef);
@@ -12,12 +12,12 @@ const Wave = () => {
   const canvsHeight = clientReact.height;
   return (
     <Main ref={mainRef}>
-      <WaveCanvas canvasWidth={canvasWidth} canvasHeight={canvsHeight} />
+      <TypoCanvas canvasWidth={canvasWidth} canvasHeight={canvsHeight} />
     </Main>
   );
 };
 
-export default Wave;
+export default Typo;
 
 const Main = styled.main`
   width: 100vw;

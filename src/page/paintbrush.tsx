@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import Canvas from '../components/Canvas';
+import Canvas from '../components/brush/Canvas';
 const Paintbrush = () => {
   return (
     <Section>

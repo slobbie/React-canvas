@@ -1,6 +1,6 @@
 import React, { RefObject, useRef } from 'react';
 import styled from 'styled-components';
-import LightWaveCanvas from '../components/LightWaveCanvas';
+import LightWaveCanvas from '../components/light/LightWaveCanvas';
 import { useClientWidthHeiht } from '../hooks/useClientWidthHeiht';
 
 const LightWave = () => {

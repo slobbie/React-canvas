@@ -6,6 +6,7 @@ import { Route, Routes } from 'react-router-dom';
 import Home from './page/home';
 import LightWave from './page/lightWave';
 import Wave from './page/wave';
+import Typo from './page/typo';
 
 function App() {
   return (
@@ -15,6 +16,7 @@ function App() {
       <Routes>
         <Route path='/' element={<Home />} />
         <Route path='/wave' element={<Wave />} />
+        <Route path='/typo' element={<Typo />} />
         <Route path='/brush' element={<Paintbrush />} />
         <Route path='/light' element={<LightWave />} />
       </Routes>
@@ -32,10 +34,15 @@ menu, ol, ul {
 }
 body {
   font-family: 'Source Sans Pro', sans-serif;
+  font-family: 'Droid Sans', 'Droid Serif';
   line-height: 1;
   margin: 0;
   padding: 0;
   border: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #fff;
+  /* min-height: 100vh; */
  
 }
 a{

@@ -1,8 +1,8 @@
 import { RefObject } from 'react';
 import styled from 'styled-components';
-import useCanvas from '../hooks/useCanvas';
+import useCanvas from '../../hooks/useCanvas';
 import { ILightSource, LightSource } from './lightSource';
-import { IPoint, Point } from './Point';
+import { IPoint, Point } from '../light/Point';
 
 type CanavsProps = {
   canvasWidth: number;

@@ -3,8 +3,6 @@ import { IWaveDataModel, WaveAni } from './WaveAni';
 export interface WaveGroupDataModel {
   canvasWidth: number;
   canvasHeigth: number;
-  // totalPoints: number,
-  // color: string[]
   resize: (canvasWidth: number, canvasHeight: number) => void;
   draw: (ctx: CanvasRenderingContext2D) => void;
 }
