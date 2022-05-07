@@ -23,14 +23,17 @@ export class Polygon {
     this.ctx = ctx;
   }
 
-  animate(ctx: CanvasRenderingContext2D) {
+  animate(ctx: CanvasRenderingContext2D, moveX: number) {
     ctx.save();
     ctx.fillStyle = '#000';
     ctx.beginPath();
-
+    // console.log(moveX);
     const angle = PI2 / this.sides;
 
     ctx.translate(this.x, this.y);
+
+    this.rotate -= moveX * 0.008;
+    ctx.rotate(this.rotate);
 
     for (let i = 0; i < this.sides; i++) {
       const x = this.radius * Math.cos(angle * i);

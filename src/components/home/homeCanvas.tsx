@@ -11,18 +11,54 @@ const HomeCanvas = ({ canvasWidth, canvasHeight }: CanavsProps) => {
   const canvasRef: RefObject<HTMLCanvasElement> =
     useRef<HTMLCanvasElement>(null);
 
+  const canavs = canvasRef.current;
+  const ctx = canavs?.getContext('2d');
+
+  const polygon = new Polygon(
+    canvasWidth / 2,
+    canvasHeight / 2,
+    canvasHeight / 3,
+    5,
+    ctx!
+  );
+
+  let isDown = false;
+  let moveX = 0;
+  let offsetX = 0;
+
+  const onDown = (e: any) => {
+    // console.log(e);
+    isDown = true;
+    moveX = 0;
+    offsetX = e.clientX;
+  };
+
+  const onMove = (e: any) => {
+    // console.log(e);
+    if (isDown) {
+      moveX = e.clientX - offsetX;
+      offsetX = e.clientX;
+      // console.log(moveX);
+      // console.log(offsetX);
+    }
+  };
+
+  const PolygonAnimate = (ctx: CanvasRenderingContext2D) => {
+    ctx.clearRect(0, 0, canvasWidth, canvasHeight);
+    moveX *= 0.92;
+    // console.log(moveX);
+    polygon.animate(ctx, moveX);
+  };
+
+  const onUp = (e: any) => {
+    isDown = false;
+    return;
+  };
+
   useEffect(() => {
     const canavs = canvasRef.current;
     const ctx = canavs?.getContext('2d');
     const pixelRatio = window.devicePixelRatio > 1 ? 2 : 1;
-
-    const polygon = new Polygon(
-      canvasWidth / 2,
-      canvasHeight / 2,
-      canvasHeight / 3,
-      5,
-      ctx!
-    );
 
     const resize = () => {
       canavs!.width = canvasWidth * pixelRatio;
@@ -33,11 +69,6 @@ const HomeCanvas = ({ canvasWidth, canvasHeight }: CanavsProps) => {
 
     let requestId: number;
 
-    const PolygonAnimate = (ctx: CanvasRenderingContext2D) => {
-      ctx.clearRect(0, 0, canvasWidth, canvasHeight);
-      polygon.animate(ctx);
-    };
-
     PolygonAnimate(ctx!);
 
     const requestAnimation = () => {
@@ -46,9 +77,14 @@ const HomeCanvas = ({ canvasWidth, canvasHeight }: CanavsProps) => {
         PolygonAnimate(ctx);
       }
     };
+    requestAnimation();
 
     window.addEventListener('resize', resize, false);
-  }, [canvasWidth, canvasHeight]);
+
+    canavs!.addEventListener('pointerdown', onDown, false);
+    canavs!.addEventListener('pointermove', onMove, false);
+    canavs!.addEventListener('pointerup', onUp, false);
+  }, [canvasWidth, canvasHeight, PolygonAnimate]);
 
   return <Canvas ref={canvasRef} />;
 };
