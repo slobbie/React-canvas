@@ -96,7 +96,7 @@ const TypoCanvas = ({ canvasWidth, canvasHeight }: CanavsProps) => {
     });
   }, [canvasWidth, canvasHeight]);
 
-  return <Canvas ref={canvasRef} style={{ position: 'absolute', top: '0' }} />;
+  return <Canvas ref={canvasRef} />;
 };
 
 export default TypoCanvas;
