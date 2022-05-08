@@ -1,8 +1,8 @@
 import { RefObject, useRef } from 'react';
 import styled from 'styled-components';
-import HomeCanvas from '../components/home/homeCanvas';
+import HomeCanvas from '../components/Card/homeCanvas';
 import { useClientWidthHeiht } from '../hooks/useClientWidthHeiht';
-const Home = () => {
+const Card = () => {
   const mainRef: RefObject<HTMLElement> = useRef<HTMLElement>(null);
 
   const clientReact = useClientWidthHeiht(mainRef);
@@ -15,7 +15,7 @@ const Home = () => {
     </Main>
   );
 };
-export default Home;
+export default Card;
 const Main = styled.main`
   width: 100vw;
   height: 100vh;

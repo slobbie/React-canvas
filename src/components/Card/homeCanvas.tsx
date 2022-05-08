@@ -16,11 +16,11 @@ const HomeCanvas = ({ canvasWidth, canvasHeight }: CanavsProps) => {
 
   const polygon = new Polygon(
     canvasWidth / 2,
-    // canvasHeight / 2,
-    canvasHeight + canvasHeight / 4,
+    canvasHeight / 2,
+    // canvasHeight + canvasHeight / 4,
     // canvasHeight / 2.5,
-    canvasHeight / 1.5,
-    15,
+    canvasHeight / 2.5,
+    12,
     ctx!
   );
 

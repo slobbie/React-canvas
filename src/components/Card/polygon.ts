@@ -64,8 +64,8 @@ export class Polygon {
       ctx.beginPath();
 
       for (let j = 0; j < 4; j++) {
-        const x2 = 130 * Math.cos(angle2 * j);
-        const y2 = 130 * Math.sin(angle2 * j);
+        const x2 = 90 * Math.cos(angle2 * j);
+        const y2 = 90 * Math.sin(angle2 * j);
         j === 0 ? ctx.moveTo(x2, y2) : ctx.lineTo(x2, y2);
       }
 

@@ -3,10 +3,10 @@ import styled from 'styled-components';
 const Nav = () => {
   return (
     <Navbar>
-      <Logo>
-        <Link to='/'>Home</Link>
-      </Logo>
       <Ul>
+        <Link to='/'>
+          <Li>Card</Li>
+        </Link>
         <Link to='/typo'>
           <Li>Typo</Li>
         </Link>
@@ -31,11 +31,19 @@ const Navbar = styled.nav`
   display: flex;
   align-items: center;
   background-color: #fff;
+  box-shadow: 0 4px 8px 0 rgb(0 0 0 / 20%);
 `;
 
 const Ul = styled.ul`
+  width: 100%;
   display: flex;
+  justify-content: space-between;
+  text-align: center;
+  align-items: center;
+  font-size: 20px;
 `;
-const Li = styled.ul``;
+const Li = styled.ul`
+  margin: 30px;
+`;
 
 const Logo = styled.h1``;
