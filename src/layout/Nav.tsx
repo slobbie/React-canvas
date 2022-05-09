@@ -7,11 +7,14 @@ const Nav = () => {
         <Link to='/'>
           <Li>Card</Li>
         </Link>
-        <Link to='/typo'>
+        {/* <Link to='/typo'>
           <Li>Typo</Li>
-        </Link>
+        </Link> */}
         <Link to='/wave'>
           <Li>Wave</Li>
+        </Link>
+        <Link to='/tag'>
+          <Li>Tag</Li>
         </Link>
         <Link to='/light'>
           <Li>light</Li>

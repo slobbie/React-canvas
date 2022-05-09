@@ -7,6 +7,7 @@ import LightWave from './page/lightWave';
 import Wave from './page/wave';
 import Typo from './page/typo';
 import Card from './page/Card';
+import Tag from './components/tag/tag';
 
 function App() {
   return (
@@ -16,7 +17,8 @@ function App() {
       <Routes>
         <Route path='/' element={<Card />} />
         <Route path='/wave' element={<Wave />} />
-        <Route path='/typo' element={<Typo />} />
+        <Route path='/tag' element={<Tag />} />
+        {/* <Route path='/typo' element={<Typo />} /> */}
         <Route path='/brush' element={<Paintbrush />} />
         <Route path='/light' element={<LightWave />} />
       </Routes>

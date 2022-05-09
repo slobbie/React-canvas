@@ -1,6 +1,7 @@
 import React, { useCallback, useEffect, useRef, useState } from 'react';
 import styled from 'styled-components';
 import Button from '../button';
+import MarginTop from '../marginTop';
 
 interface CanvasProps {
   width: number;
@@ -210,6 +211,7 @@ const Canvas = ({ width, height }: CanvasProps) => {
 
   return (
     <Section>
+      <MarginTop margin={70} />
       <CanvasBox ref={canvasRef} height={height} width={width} />
       <ControlBar>
         <RangeInput
