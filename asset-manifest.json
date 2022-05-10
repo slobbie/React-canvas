@@ -1,0 +1,11 @@
+{
+  "files": {
+    "main.js": "/canvas-example/static/js/main.1f2bba6a.js",
+    "static/media/화장품이미지.png": "/canvas-example/static/media/화장품이미지.783ef4233f80830614ab.png",
+    "index.html": "/canvas-example/index.html",
+    "main.1f2bba6a.js.map": "/canvas-example/static/js/main.1f2bba6a.js.map"
+  },
+  "entrypoints": [
+    "static/js/main.1f2bba6a.js"
+  ]
+}
