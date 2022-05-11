@@ -1,10 +1,10 @@
 {
   "files": {
-    "main.js": "/canvas-example/static/js/main.9b86896c.js",
+    "main.js": "/canvas-example/static/js/main.ddbfe374.js",
     "index.html": "/canvas-example/index.html",
-    "main.9b86896c.js.map": "/canvas-example/static/js/main.9b86896c.js.map"
+    "main.ddbfe374.js.map": "/canvas-example/static/js/main.ddbfe374.js.map"
   },
   "entrypoints": [
-    "static/js/main.9b86896c.js"
+    "static/js/main.ddbfe374.js"
   ]
 }
