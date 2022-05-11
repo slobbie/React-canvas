@@ -215,7 +215,7 @@ const Tag = () => {
           id='draw'
         />
         <CanvasShow width='800' height='1000' id='show' />
-        <Img src={tagimg} />
+        <Img src='https://sun-learning-ff8.notion.site/image/https%3A%2F%2Fs3-us-west-2.amazonaws.com%2Fsecure.notion-static.com%2Fe05a070d-6bea-420b-a14a-f4597f7b7f74%2Ffashion-unsplash.jpg?table=block&id=0ec0813e-4783-42d7-9ee8-a0bcb596671e&spaceId=06605955-0fd9-4614-ba9a-0812be412dbe&width=2000&userId=&cache=v2' />
         {dragged &&
           dragged.map((list: any, idx: number) => (
             <div
