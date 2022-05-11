@@ -8,23 +8,11 @@ const Tag = () => {
   const [startMouse, setStartMouse] = useState<number[] | null[]>([null, null]);
   const [endMouse, setEndMouse] = useState<number[] | null[]>([null, null]);
   const [MouseUp, setMouseUp] = useState(true);
-  const [dragged, setDragged] = useState<any>([
-    { name: '디퓨저', position: [515, 79, 752, 330] },
-  ]);
+  const [dragged, setDragged] = useState<any>([]);
   const [resize, setResize] = useState<number[]>([0, 0]);
 
   // 로컬스트리지 데이터 명시
   const localStorageData = window.localStorage;
-
-  //   const defaultData = localStorage.setItem(
-  //     'canvasSetItem',
-  //     JSON.stringify([
-  //       {
-  //         name: '디퓨저',
-  //         position: [515, 79, 752, 330],
-  //       },
-  //     ])
-  //   );
 
   // 그려지는 컨버스
   const drawCanvas: HTMLCanvasElement = document.getElementById(
