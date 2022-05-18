@@ -4,10 +4,10 @@ const Nav = () => {
   return (
     <Navbar>
       <Ul>
-        <Link to='/wave'>
+        <Link to='/canvas-example'>
           <Li>Wave</Li>
         </Link>
-        <Link to='/canvas-example'>
+        <Link to='/card'>
           <Li>Card</Li>
         </Link>
         <Link to='/brush'>
