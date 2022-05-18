@@ -4,24 +4,25 @@ const Nav = () => {
   return (
     <Navbar>
       <Ul>
-        <Link to='/canvas-example'>
-          <Li>Card</Li>
-        </Link>
-        {/* <Link to='/typo'>
-          <Li>Typo</Li>
-        </Link> */}
         <Link to='/wave'>
           <Li>Wave</Li>
         </Link>
-        <Link to='/tag'>
-          <Li>Tag</Li>
-        </Link>
-        <Link to='/light'>
-          <Li>light</Li>
+        <Link to='/canvas-example'>
+          <Li>Card</Li>
         </Link>
         <Link to='/brush'>
           <Li>Paintbrush</Li>
         </Link>
+        <Link to='/light'>
+          <Li>light</Li>
+        </Link>
+        {/* <Link to='/typo'>
+          <Li>Typo</Li>
+        </Link> */}
+
+        {/* <Link to='/tag'>
+          <Li>Tag</Li>
+        </Link> */}
       </Ul>
     </Navbar>
   );

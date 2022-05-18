@@ -1,10 +1,11 @@
 import { useEffect, useState } from 'react';
 import styled from 'styled-components';
 import { RiDeleteBin6Line, RiPencilLine } from 'react-icons/ri';
+import { Link } from 'react-router-dom';
+import { AiOutlineHome } from 'react-icons/ai';
 import { BsTag } from 'react-icons/bs';
-import tagimg from './화장품이미지.png';
-import MarginTop from '../marginTop';
-const Tag = () => {
+
+const Canvas = () => {
   const [startMouse, setStartMouse] = useState<number[] | null[]>([null, null]);
   const [endMouse, setEndMouse] = useState<number[] | null[]>([null, null]);
   const [MouseUp, setMouseUp] = useState(true);
@@ -172,7 +173,11 @@ const Tag = () => {
 
   return (
     <Section>
-      <MarginTop margin={70} />
+      <Top>
+        <Link to='/' className='HomeLink'>
+          <AiOutlineHome className='homeIcon' />
+        </Link>
+      </Top>
       <Container>
         <Board>
           {dragged &&
@@ -230,7 +235,7 @@ const Tag = () => {
     </Section>
   );
 };
-export default Tag;
+export default Canvas;
 
 const Section = styled.section`
   display: flex;
@@ -283,7 +288,7 @@ const CanvasShow = styled.canvas`
 `;
 
 const Img = styled.img`
-  /* object-fit: cover; */
+  object-fit: cover;
   width: 100%;
   height: 100vh;
 `;
