@@ -1,5 +1,16 @@
 ## Canvas - Example
 
+[배포 링크](https://slobbie.github.io/canvas-example/)
+
+## 사용 스택
+
+`Typescript` `React` `Styled-Components`
+
+## 주요기능
+
+1. React 환경에서 canvas 사용
+2. useRef를 이용한 Virtual dom 제어
+
 ### Getting Started
 
 1. `yarn` dependencies,
