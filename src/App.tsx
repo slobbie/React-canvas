@@ -15,8 +15,8 @@ function App() {
       <GlobalStyle />
       <Nav />
       <Routes>
-        <Route path='/canvas-example' element={<Card />} />
-        <Route path='/wave' element={<Wave />} />
+        <Route path='/card' element={<Card />} />
+        <Route path='/canvas-example' element={<Wave />} />
         {/* <Route path='/tag' element={<Tag />} /> */}
         {/* <Route path='/typo' element={<Typo />} /> */}
         <Route path='/brush' element={<Paintbrush />} />
