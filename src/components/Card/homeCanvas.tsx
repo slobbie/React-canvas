@@ -20,7 +20,7 @@ const HomeCanvas = ({ canvasWidth, canvasHeight }: CanavsProps) => {
     // canvasHeight + canvasHeight / 4,
     // canvasHeight / 2.5,
     canvasHeight / 2.5,
-    12,
+    10,
     ctx!
   );
 

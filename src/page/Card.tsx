@@ -11,6 +11,9 @@ const Card = () => {
   const canvsHeight = clientReact.height;
   return (
     <Main ref={mainRef}>
+      <TextBox>
+        <span>Click the Move</span>
+      </TextBox>
       <HomeCanvas canvasWidth={canvasWidth} canvasHeight={canvsHeight} />
     </Main>
   );
@@ -20,4 +23,14 @@ const Main = styled.main`
   width: 100vw;
   height: 100vh;
   background-color: #c5beaf;
+`;
+
+const TextBox = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  left: 30%;
+  top: 30%;
+  font-size: 35px;
 `;
