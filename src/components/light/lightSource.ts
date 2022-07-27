@@ -44,7 +44,7 @@ export class LightSource implements ILightSource {
 
   drawLightSource(ctx: CanvasRenderingContext2D) {
     ctx.beginPath();
-    ctx.fillStyle = 'rgb(102, 103, 171)';
+    ctx.fillStyle = 'rgb(255, 241, 118)';
     ctx.arc(this.centerX, this.centerY, this.radius, 0, PI2);
     ctx.fill();
   }

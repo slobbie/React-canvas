@@ -211,8 +211,8 @@ const Canvas = ({ width, height }: CanvasProps) => {
 
   return (
     <Section>
-      <MarginTop margin={70} />
-      <CanvasBox ref={canvasRef} height={height} width={width} />
+      <CanvasBox ref={canvasRef} height={300} width={500} />
+      <MarginTop margin={20} />
       <ControlBar>
         <RangeInput
           value={value}
@@ -221,11 +221,13 @@ const Canvas = ({ width, height }: CanvasProps) => {
           onChange={SliderOnChange}
           type='range'
         />
+        <MarginTop margin={20} />
         <BtnBox>
           {ButtonData.map((btn) => {
             return <Button key={btn.id} color={btn.color} />;
           })}
         </BtnBox>
+        <MarginTop margin={10} />
         <DeleteBtn onClick={clearCanvas}>지우기</DeleteBtn>
       </ControlBar>
     </Section>
@@ -235,15 +237,20 @@ const Canvas = ({ width, height }: CanvasProps) => {
 export default React.memo(Canvas);
 
 Canvas.defaultProps = {
-  width: 800,
-  height: 600,
+  width: 400,
+  height: 300,
 };
 
-const Section = styled.section`
+const Section = styled.div`
   display: flex;
   flex-direction: column;
-  width: 800px;
-  height: 100vh;
+  width: 600px;
+  height: 70vh;
+
+  border-radius: 50px;
+  align-items: center;
+  justify-content: center;
+  background-color: #aae181;
 `;
 
 const CanvasBox = styled.canvas`

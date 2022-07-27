@@ -36,7 +36,7 @@ export class Point implements IPoint {
       this.AMPLITUDE * Math.sin(this.radian) + this.CENTER_LINE;
 
     ctx.beginPath();
-    ctx.fillStyle = 'rgb(102 , 103, 171)';
+    ctx.fillStyle = 'rgb(255 , 241, 118)';
     ctx.arc(
       this.pointerCenterX,
       this.pointerCenterY,

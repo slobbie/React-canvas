@@ -46,7 +46,7 @@ export class Polygon {
     // ctx.beginPath();
     // console.log(moveX);
     const angle = PI2 / this.sides;
-    const angle2 = PI2 / 4;
+    const angle2 = PI2 / 7;
 
     ctx.translate(this.x, this.y);
 

@@ -5,15 +5,17 @@ import { WaveGroup, WaveGroupDataModel } from './WaveGroup';
 type CanavsProps = {
   canvasWidth: number;
   canvasHeight: number;
+  Toggle: boolean;
 };
 
-const WaveCanvas = ({ canvasWidth, canvasHeight }: CanavsProps) => {
+const WaveCanvas = ({ canvasWidth, canvasHeight, Toggle }: CanavsProps) => {
   const canvasRef: RefObject<HTMLCanvasElement> =
     useRef<HTMLCanvasElement>(null);
 
   const waveGroup: WaveGroupDataModel = new WaveGroup(
     canvasWidth,
-    canvasHeight
+    canvasHeight,
+    Toggle
   );
   const animate = (ctx: CanvasRenderingContext2D) => {
     ctx.clearRect(0, 0, canvasWidth, canvasHeight);

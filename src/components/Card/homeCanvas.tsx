@@ -8,6 +8,7 @@ type CanavsProps = {
 };
 
 const HomeCanvas = ({ canvasWidth, canvasHeight }: CanavsProps) => {
+  console.log(canvasWidth);
   const canvasRef: RefObject<HTMLCanvasElement> =
     useRef<HTMLCanvasElement>(null);
 
@@ -19,8 +20,8 @@ const HomeCanvas = ({ canvasWidth, canvasHeight }: CanavsProps) => {
     canvasHeight / 2,
     // canvasHeight + canvasHeight / 4,
     // canvasHeight / 2.5,
-    canvasHeight / 2.5,
-    10,
+    canvasHeight / 3,
+    9,
     ctx!
   );
 
@@ -65,7 +66,7 @@ const HomeCanvas = ({ canvasWidth, canvasHeight }: CanavsProps) => {
     const resize = () => {
       canavs!.width = canvasWidth * pixelRatio;
       canavs!.height = canvasHeight * pixelRatio;
-      ctx?.scale(pixelRatio, pixelRatio);
+      // ctx?.scale(pixelRatio, pixelRatio);
     };
     resize();
 

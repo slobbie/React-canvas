@@ -1,6 +1,6 @@
 {
-  "homepage": "https://slobbie.github.io/canvas-example/",
-  "name": "canvas-example",
+  "homepage": "https://slobbie.github.io/React-canvas/",
+  "name": "React-canvas",
   "version": "0.1.0",
   "private": true,
   "dependencies": {

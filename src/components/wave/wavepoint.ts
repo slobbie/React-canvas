@@ -17,7 +17,7 @@ export class Wavepoint implements IWavePoint {
     this.fixedY = y;
     this.speed = 0.02;
     this.cur = index;
-    this.max = Math.random() * 100 + 150;
+    this.max = Math.random() * 50 + 80;
   }
 
   update() {

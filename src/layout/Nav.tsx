@@ -4,7 +4,7 @@ const Nav = () => {
   return (
     <Navbar>
       <Ul>
-        <Link to='/canvas-example'>
+        <Link to='/'>
           <Li>Wave</Li>
         </Link>
         <Link to='/card'>
@@ -13,9 +13,9 @@ const Nav = () => {
         <Link to='/brush'>
           <Li>Paintbrush</Li>
         </Link>
-        <Link to='/light'>
+        {/* <Link to='/light'>
           <Li>light</Li>
-        </Link>
+        </Link> */}
         {/* <Link to='/typo'>
           <Li>Typo</Li>
         </Link> */}

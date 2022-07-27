@@ -3,11 +3,8 @@ import Paintbrush from './page/paintbrush';
 import styled, { createGlobalStyle } from 'styled-components';
 import Nav from './layout/Nav';
 import { Route, Routes } from 'react-router-dom';
-import LightWave from './page/lightWave';
 import Wave from './page/wave';
-import Typo from './page/typo';
 import Card from './page/Card';
-import Tag from './components/tag/tag';
 
 function App() {
   return (
@@ -15,12 +12,12 @@ function App() {
       <GlobalStyle />
       <Nav />
       <Routes>
+        <Route path='/' element={<Wave />} />
         <Route path='/card' element={<Card />} />
-        <Route path='/canvas-example' element={<Wave />} />
         {/* <Route path='/tag' element={<Tag />} /> */}
         {/* <Route path='/typo' element={<Typo />} /> */}
         <Route path='/brush' element={<Paintbrush />} />
-        <Route path='/light' element={<LightWave />} />
+        {/* <Route path='/light' element={<LightWave />} /> */}
       </Routes>
     </Section>
   );
