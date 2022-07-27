@@ -1,10 +1,10 @@
 {
   "files": {
-    "main.js": "https://slobbie.github.io/React-canvas/static/js/main.dc907369.js",
+    "main.js": "https://slobbie.github.io/React-canvas/static/js/main.3c3782e8.js",
     "index.html": "https://slobbie.github.io/React-canvas/index.html",
-    "main.dc907369.js.map": "https://slobbie.github.io/React-canvas/static/js/main.dc907369.js.map"
+    "main.3c3782e8.js.map": "https://slobbie.github.io/React-canvas/static/js/main.3c3782e8.js.map"
   },
   "entrypoints": [
-    "static/js/main.dc907369.js"
+    "static/js/main.3c3782e8.js"
   ]
 }
