@@ -12,11 +12,11 @@ function App() {
       <GlobalStyle />
       <Nav />
       <Routes>
-        <Route path='/' element={<Wave />} />
-        <Route path='/card' element={<Card />} />
+        <Route path='/React-canvas' element={<Wave />} />
+        <Route path='/React-canvas/card' element={<Card />} />
         {/* <Route path='/tag' element={<Tag />} /> */}
         {/* <Route path='/typo' element={<Typo />} /> */}
-        <Route path='/brush' element={<Paintbrush />} />
+        <Route path='/React-canvas/brush' element={<Paintbrush />} />
         {/* <Route path='/light' element={<LightWave />} /> */}
       </Routes>
     </Section>
