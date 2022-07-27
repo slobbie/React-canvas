@@ -49,5 +49,3 @@ const Ul = styled.ul`
 const Li = styled.ul`
   margin: 30px;
 `;
-
-const Logo = styled.h1``;

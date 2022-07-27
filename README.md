@@ -1,8 +1,8 @@
 ## Canvas - Example
 
-[배포 링크](https://slobbie.github.io/canvas-example/)
+[배포 링크](https://slobbie.github.io/React-canvas)
 
-![스크린샷 2022-05-18 오후 10 35 45](https://user-images.githubusercontent.com/86298255/169051886-a555a182-e0f3-45e3-9072-e9a50a192848.png)
+![스크린샷 2022-05-18 오후 10 35 45](https://user-images.githubusercontent.com/86298255/181311644-842d74c5-f4f2-4b57-bc75-997e0fb95e6b.png)
 
 ## 사용 스택
 
