@@ -9,7 +9,7 @@ const root = ReactDOM.createRoot(
 );
 
 root.render(
-  <BrowserRouter basename='/'>
+  <BrowserRouter basename='/React-canvas'>
     <App />
   </BrowserRouter>
 );

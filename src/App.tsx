@@ -13,13 +13,13 @@ function App() {
       <GlobalStyle />
       <Nav />
       <Routes>
-        <Route path='/React-canvas' element={<Wave />} />
-        <Route path='/React-canvas/card' element={<Card />} />
+        <Route path='/wave' element={<Wave />} />
+        <Route path='/card' element={<Card />} />
         {/* <Route path='/tag' element={<Tag />} /> */}
         {/* <Route path='/typo' element={<Typo />} /> */}
-        <Route path='/React-canvas/brush' element={<Paintbrush />} />
+        <Route path='/brush' element={<Paintbrush />} />
         {/* <Route path='/light' element={<LightWave />} /> */}
-        <Route path='/React-canvas/sheep' element={<Sheep />} />
+        <Route path='/sheep' element={<Sheep />} />
       </Routes>
     </Section>
   );
