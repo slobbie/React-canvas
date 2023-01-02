@@ -7,6 +7,9 @@ const Nav = () => {
         <Link to='/React-canvas'>
           <Li>Wave</Li>
         </Link>
+        <Link to='/React-canvas/sheep'>
+          <Li>sheep</Li>
+        </Link>
         <Link to='/React-canvas/card'>
           <Li>Card</Li>
         </Link>
