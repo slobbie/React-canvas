@@ -5,6 +5,7 @@ import Nav from './layout/Nav';
 import { Route, Routes } from 'react-router-dom';
 import Wave from './page/wave';
 import Card from './page/Card';
+import Sheep from './page/Sheep';
 
 function App() {
   return (
@@ -18,6 +19,7 @@ function App() {
         {/* <Route path='/typo' element={<Typo />} /> */}
         <Route path='/React-canvas/brush' element={<Paintbrush />} />
         {/* <Route path='/light' element={<LightWave />} /> */}
+        <Route path='/React-canvas/sheep' element={<Sheep />} />
       </Routes>
     </Section>
   );
@@ -43,12 +45,12 @@ body {
   height: 100%;
   background-color: #fff;
   /* min-height: 100vh; */
- 
+
 }
 a{
   text-decoration: none;
   color: inherit;
-} 
+}
 `;
 
 const Section = styled.section`

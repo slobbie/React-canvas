@@ -8,7 +8,6 @@ type CanavsProps = {
 };
 
 const HomeCanvas = ({ canvasWidth, canvasHeight }: CanavsProps) => {
-  console.log(canvasWidth);
   const canvasRef: RefObject<HTMLCanvasElement> =
     useRef<HTMLCanvasElement>(null);
 
