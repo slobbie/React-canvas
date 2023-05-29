@@ -1,9 +1,11 @@
 import styled from 'styled-components';
-import Canvas from '../components/brush/Canvas';
+import PaintCanvas from '../components/brush/PaintCanvas';
+
+/** 그림판 페이지 */
 const Paintbrush = () => {
   return (
     <Section>
-      <Canvas />
+      <PaintCanvas />
     </Section>
   );
 };
@@ -11,7 +13,6 @@ const Paintbrush = () => {
 export default Paintbrush;
 
 const Section = styled.section`
-  /* background-color: #badc58; */
   width: 100%;
   height: 100vh;
   display: flex;
