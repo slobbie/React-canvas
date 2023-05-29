@@ -6,10 +6,9 @@ const Card = () => {
   const mainRef: RefObject<HTMLElement> = useRef<HTMLElement>(null);
 
   const clientReact = useClientWidthHeiht(mainRef);
-  //   console.log(clientReact);
   const canvasWidth = clientReact.width;
-  const canvsHeight = clientReact.height;
-  console.log(canvasWidth);
+  const canvasHeight = clientReact.height;
+
   return (
     <Container>
       <CardContainer>
@@ -17,7 +16,7 @@ const Card = () => {
           <span>Click the Move</span>
         </TextBox>
         <Main ref={mainRef}>
-          <HomeCanvas canvasWidth={canvasWidth} canvasHeight={canvsHeight} />
+          <HomeCanvas canvasWidth={canvasWidth} canvasHeight={canvasHeight} />
         </Main>
         <Line />
       </CardContainer>

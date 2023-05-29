@@ -3,25 +3,18 @@ import styled, { css } from 'styled-components';
 
 interface BtnProps {
   color: string;
-  //   btnRef: any;
-  //   onClick?: React.MouseEventHandler<HTMLButtonElement>;
-  //   children: ReactNode;
+  onClick: (e: React.MouseEvent<HTMLButtonElement, MouseEvent>) => void;
 }
 const Button = React.forwardRef((props: BtnProps, ref) => {
-  const { color } = props;
-  //   const onClick = (btnRef: React.MouseEvent<HTMLButtonElement>) => {
-  //     if (props.onClick) {
-  //       props.onClick(btnRef);
-  //       console.log(btnRef);
-  //     }
-  //   };
-  //   console.log(btnRef);
+  const { color, onClick } = props;
+
   return (
     <Btn
       className='CanvasColor'
       style={{ backgroundColor: color }}
+      onClick={(e) => onClick(e)}
       color={color}
-    ></Btn>
+    />
   );
 });
 // const forwardRefButton = React.forwardRef(Button);
