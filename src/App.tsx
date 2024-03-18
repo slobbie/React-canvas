@@ -1,4 +1,3 @@
-import React from 'react';
 import Paintbrush from './page/paintbrush';
 import styled, { createGlobalStyle } from 'styled-components';
 import Nav from './layout/Nav';
@@ -19,13 +18,14 @@ function App() {
         {/* <Route path='/typo' element={<Typo />} /> */}
         <Route path='/brush' element={<Paintbrush />} />
         {/* <Route path='/light' element={<LightWave />} /> */}
-        <Route path='/sheep' element={<Sheep />} />
+        <Route path='/' element={<Sheep />} />
       </Routes>
     </Section>
   );
 }
 
 export default App;
+
 const GlobalStyle = createGlobalStyle`
 menu, ol, ul {
   list-style: none;

@@ -7,7 +7,7 @@ const Nav = () => {
         <Link to='/wave'>
           <Li>Wave</Li>
         </Link>
-        <Link to='/sheep'>
+        <Link to='/'>
           <Li>sheep</Li>
         </Link>
         <Link to='/card'>
